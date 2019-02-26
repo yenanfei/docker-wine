@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 
 COPY link.sh /root/
-COPY sources.list /etc/apt/
 RUN apt-get update
 
 RUN apt-get install wget git locales ttf-wqy-zenhei sudo -y
