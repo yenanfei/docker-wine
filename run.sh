@@ -9,7 +9,9 @@ fi
 xhost + &>/dev/null
 docker rm -f docker-wine
 docker pull xs020105/docker-wine
-docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix \
+mkdir -p $(pwd)/APP_PATH
+sudo docker run -ti -v /tmp/.X11-unix:/tmp/.X11-unix \
+	-v $(pwd)/APP_PATH:/root \
     -e XMODIFIERS=@im=fcitx \
     -e QT_IM_MODULE=fcitx \
     -e GTK_IM_MODULE=fcitx \
